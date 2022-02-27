@@ -1,5 +1,5 @@
 # Alkemy Wallet
-<h2> Importante: El "home" se encuentra en la ruta ( /moves ) <br>
+<h2> Importante: <br> El "home" se encuentra en la ruta ( /moves ) <br>
 Ejemplo en Local Host 400: localhost:4000/moves  <br>
 Base de datos volcada en data-dump.sql </h2>
 
