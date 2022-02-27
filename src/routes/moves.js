@@ -63,21 +63,34 @@ router.post('/add', async (req, res) => {
 
 // --------------------- RUTA PARA EL "HOME" Y MOSTRAR LISTADO DE OPERACIONES ----------
 
-// GET PARA OBTENER EL LISTADO DE OPERACIONES Y EL SALDO
+// GET PARA OBTENER EL LISTADO DE LAS ULTIMAS 10 OPERACIONES Y EL SALDO
 router.get('/', async (req, res) => {
 
     // OBTIENE UN QUERY DE LOS MOVIMIENTOS Y LOS DATOS DEL USUARIO
-    const moves = await pool.query("SELECT * FROM moves ORDER BY FIELD (tipo, 'INGRESO', 'EGRESO')");
+    const moves = await pool.query("SELECT * FROM moves ORDER BY id DESC LIMIT 10");
     const saldo = await pool.query('SELECT * FROM users');
     
     // OBTIENE LOS DATOS DE LOS QUERYS Y LOS ENVIA A LA VIEW PRINCIPAL (list.hbs) 
     res.render('moves/list', {moves, saldo: saldo[0], move: moves[0]});
 });
 
+//HISTORIAL COMPLETO 
+
+router.get('/todas', async (req, res) => {
+
+    // OBTIENE UN QUERY DE LOS MOVIMIENTOS Y LOS DATOS DEL USUARIO
+    const moves = await pool.query("SELECT * FROM moves ORDER BY id DESC");
+    const saldo = await pool.query('SELECT * FROM users');
+    
+    // OBTIENE LOS DATOS DE LOS QUERYS Y LOS ENVIA A LA VIEW PRINCIPAL (list.hbs) 
+    res.render('moves/list', {moves, saldo: saldo[0], move: moves[0]});
+});
+
+
 router.get('/egresos', async (req, res) => {
 
     // OBTIENE UN QUERY DE LOS MOVIMIENTOS Y LOS DATOS DEL USUARIO
-    const moves = await pool.query("SELECT * FROM moves WHERE tipo = 'EGRESO'");
+    const moves = await pool.query("SELECT * FROM moves WHERE tipo = 'EGRESO' ORDER BY id DESC");
     const saldo = await pool.query('SELECT * FROM users');
     
     // OBTIENE LOS DATOS DE LOS QUERYS Y LOS ENVIA A LA VIEW PRINCIPAL (list.hbs) 
@@ -87,7 +100,7 @@ router.get('/egresos', async (req, res) => {
 router.get('/ingresos', async (req, res) => {
 
     // OBTIENE UN QUERY DE LOS MOVIMIENTOS Y LOS DATOS DEL USUARIO
-    const moves = await pool.query("SELECT * FROM moves WHERE tipo = 'INGRESO'");
+    const moves = await pool.query("SELECT * FROM moves WHERE tipo = 'INGRESO' ORDER BY id DESC");
     const saldo = await pool.query('SELECT * FROM users');
     
     // OBTIENE LOS DATOS DE LOS QUERYS Y LOS ENVIA A LA VIEW PRINCIPAL (list.hbs) 

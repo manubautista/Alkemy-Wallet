@@ -6,3 +6,6 @@ body{
     background: url(operaciones.jpg);
 }
 
+a{
+    text-decoration: none;
+}
