@@ -3,7 +3,7 @@ module.exports = {
     database: {
         host: 'localhost',
         user: 'root',
-        password: '',
+        password: 'abc',
         database: 'database_moves'
     }
 };
