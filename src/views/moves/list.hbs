@@ -1,0 +1,67 @@
+<div class="container p-4 card text-center text-white bg-primary border-light col-md-3 my-4">
+    <h3 >
+        <p>Saldo Disponible</p>
+        <div class="dropdown-divider"></div>
+        <i class="fa-solid fa-wallet"></i> 
+        ${{saldo.saldo}}
+    </h3>
+</div>
+
+<div class="operaciones card border-light py-auto pt-2  text-center text-white col-md-10 mx-auto bg-info">
+  <h2>
+    <div >
+        <p>OPERACIONES &nbsp;<i class="fa-solid fa-arrow-right-arrow-left"></i> 
+        <a href="/moves/ingresos/">FILTRAR INGRESOS</a>
+        <a href="/moves/egresos/">FILTRAR EGRESOS</a>
+        </p>
+    </div>
+  </h2>  
+</div>
+<div class="container p-4">
+    <div class="row"> 
+        {{#each moves}}
+            <div class="col-md-3">
+                <div class="card text-center text-white border-light bg-dark mt-4">
+                    <div class="card-body">
+                            <h5 class="card-title text-uppercase">
+                                {{concepto}}
+                            </h5>
+                            <div class="dropdown-divider"></div>
+                            <p class="m-2"> ${{monto}} </p>
+                            
+                            <p>{{fecha}}</p>
+                            
+                            <p>  {{tipo}} </p> 
+                            <div class="dropdown-divider"></div>
+                            <div>
+                                <a href="/moves/edit/{{ID}}" class="btn btn-secondary border-light">Editar <i class="fa-solid fa-pen-to-square"></i></a>
+                                <a href="/moves/delete/{{ID}}" class="btn btn-danger border-light">Borrar   <i class="fa-solid fa-xmark"></i></a>
+                            </div>
+                    </div>
+                </div>
+            </div>
+
+        {{else}}
+
+            <div class="col-md-4 mx-auto">
+                <div class="card card-body text-center">
+                    <p>No hay operaciones registradas.</p>
+                    <a href="moves/add">Realiza una operacion!</a>
+                </div>
+            </div>
+                
+        {{/each}}
+    </div>
+   
+</div>
+
+<!-- Footer -->
+
+
+<footer>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="bg-dark text-white text-center py-1 mt-2 mx-auto"> 
+        <p> Hecho por: Manuel Bautista 😎 👉 <a href="http://cvbautista.pythonanywhere.com/">  CV (desactualizado) </a> </p>
+      </div>
+  </nav>
+</footer>
