@@ -1,7 +1,7 @@
 # Alkemy Wallet
 <h2> Importante: <br> El "home" se encuentra en la ruta ( /moves ) <br>
-Ejemplo en Local Host 400: localhost:4000/moves  <br>
-Base de datos volcada en data-dump.sql </h2>
+Ejemplo en Local Host 400: localhost:4000/moves.  <br>
+Base de datos volcada en data-dump.sql. </h2>
 
 <div> API para administración de presupuesto personal
   <li> Este repositorio forma parte del challenge de Alkemy Fullstack JS. </li>
