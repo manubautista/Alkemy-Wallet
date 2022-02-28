@@ -3,7 +3,7 @@
 Ejemplo en Local Host 400: localhost:4000/moves.  <br>
 Base de datos volcada en database/data-dump.sql. </h2>
 
-<div> <h2> API para administración de presupuesto personal </h2> 
+<div> <h3> API para administración de presupuesto personal </h3> 
   <li> Este repositorio forma parte del challenge de Alkemy Fullstack JS. </li>
   <li> Desarrollado en Node.js junto al framework de Backend Express. </li>
   <li> Base de datos manejada con MariaDB. </li>
@@ -20,3 +20,7 @@ Base de datos volcada en database/data-dump.sql. </h2>
 <h2> Vista /moves/add </h2>
 
 ![form](https://user-images.githubusercontent.com/91494874/156025335-bc22da10-8e5b-48b4-866c-92a221765b19.jpg)
+
+<h2> Vista /moves/edit/95 <- (id de la operación) </h2>
+
+![formedit](https://user-images.githubusercontent.com/91494874/156026624-073a1fc9-5acb-44dc-ac17-d3c1958f7ca3.jpg)
