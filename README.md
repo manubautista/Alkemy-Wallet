@@ -13,8 +13,10 @@ Base de datos volcada en database/data-dump.sql. </h2>
   <li> Se lleva la información de la base de datos a las templates con Handlebars. </li>
  </div>
 <h2> Vista /moves (home) </h2>
+
 ![main](https://user-images.githubusercontent.com/91494874/155935157-7cdbca72-d240-457c-a9cb-f271430e7e4e.jpg)
 
 
 <h2> Vista /moves/add </h2>
+
 ![form](https://user-images.githubusercontent.com/91494874/156025335-bc22da10-8e5b-48b4-866c-92a221765b19.jpg)
