@@ -3,7 +3,7 @@
 Ejemplo en Local Host 400: localhost:4000/moves.  <br>
 Base de datos volcada en database/data-dump.sql. </h2>
 
-<div> API para administración de presupuesto personal
+<div> <h2> API para administración de presupuesto personal </h2> 
   <li> Este repositorio forma parte del challenge de Alkemy Fullstack JS. </li>
   <li> Desarrollado en Node.js junto al framework de Backend Express. </li>
   <li> Base de datos manejada con MariaDB. </li>
