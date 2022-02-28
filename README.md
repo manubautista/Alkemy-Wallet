@@ -12,6 +12,7 @@ Base de datos volcada en database/data-dump.sql. </h2>
   <li> Frontend desarrollado con Bootstrap y Fontawesome. </li>
  </div>
  
- <div> 
+<div></div>
+
 ![main](https://user-images.githubusercontent.com/91494874/155935157-7cdbca72-d240-457c-a9cb-f271430e7e4e.jpg)
-</div>
+
