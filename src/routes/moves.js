@@ -3,9 +3,8 @@ const router = express.Router();
 const pool = require('../database');
 // IMPORTS 
 
+
 // ----------------------------- RUTA PARA AGREGAR OPERACIONES --------------------
-
-
 
 // GET PARA OBTENER LA VISTA DEL FORMULARIO
 router.get('/add', (req, res)=>{
@@ -14,7 +13,8 @@ router.get('/add', (req, res)=>{
 
 // POST PARA EFECTUAR LOS CAMBIOS EN LA BASE DE DATOS
 router.post('/add', async (req, res) => {
-// OBTIENE LA INFORMACIÓN QUE COLOCÓ EL USUARIO DESDE EL BODY
+
+// OBTIENE LA INFORMACIÓN (JSON) QUE COLOCÓ EL USUARIO DESDE EL BODY Y LO ALMACENA EN newMove 
     const { concepto, monto, fecha, tipo} = req.body; 
     const newMove = {
         concepto,
@@ -22,10 +22,12 @@ router.post('/add', async (req, res) => {
         fecha,
         tipo
     };
+
     // QUERY PARA INSERTAR NUEVA OPERACIÓN EN LA BASE DE DATOS
+    // '?' ES REEMPLAZADO POR newMove
     await pool.query('INSERT INTO moves set ?', [newMove]);
 
-    // CODIGO PARA MODIFICAR EL SALDO EN BASE A LAS OPERACIONES REALIZADAS
+    // CODIGO PARA MODIFICAR EL SALDO LUEGO DE HABER REGISTRADO UNA NUEVA OPERACIÓN
 
     // OBTIENE EL TIPO DE OPERACION AGREGADA (INGRESO o EGRESO)
     let tipoOperacion = newMove.tipo;
@@ -61,12 +63,12 @@ router.post('/add', async (req, res) => {
     
 });
 
-// --------------------- RUTA PARA EL "HOME" Y MOSTRAR LISTADO DE OPERACIONES ----------
+// ---------- RUTA PARA EL "HOME" Y MOSTRAR LISTADO DE ÚLTIMAS 10 OPERACIONES -------------
 
 // GET PARA OBTENER EL LISTADO DE LAS ULTIMAS 10 OPERACIONES Y EL SALDO
 router.get('/', async (req, res) => {
 
-    // OBTIENE UN QUERY DE LOS MOVIMIENTOS Y LOS DATOS DEL USUARIO
+    // OBTIENE UN QUERY DE LOS MOVIMIENTOS Y EL SALDO DEL USUARIO
     const moves = await pool.query("SELECT * FROM moves ORDER BY id DESC LIMIT 10");
     const saldo = await pool.query('SELECT * FROM users');
     
@@ -78,7 +80,7 @@ router.get('/', async (req, res) => {
 
 router.get('/todas', async (req, res) => {
 
-    // OBTIENE UN QUERY DE LOS MOVIMIENTOS Y LOS DATOS DEL USUARIO
+    // OBTIENE UN QUERY DE LOS MOVIMIENTOS Y EL SALDO DEL USUARIO
     const moves = await pool.query("SELECT * FROM moves ORDER BY id DESC");
     const saldo = await pool.query('SELECT * FROM users');
     
@@ -89,7 +91,7 @@ router.get('/todas', async (req, res) => {
 
 router.get('/egresos', async (req, res) => {
 
-    // OBTIENE UN QUERY DE LOS MOVIMIENTOS Y LOS DATOS DEL USUARIO
+    // OBTIENE UN QUERY DE LOS MOVIMIENTOS Y EL SALDO DEL USUARIO
     const moves = await pool.query("SELECT * FROM moves WHERE tipo = 'EGRESO' ORDER BY id DESC");
     const saldo = await pool.query('SELECT * FROM users');
     
@@ -198,19 +200,19 @@ router.post('/edit/:id', async (req, res) => {
     // SI LA OPERACION ES UN INGRESO 
     if (tipoOperacion == 'INGRESO'){
 
-        // RESTAR EL MONTO DE LA OPERACION ANTES DE SER ACTUALIZADA
+        // RESTAR AL SALDO EL MONTO DE LA OPERACION ANTES DE SER ACTUALIZADA
         numeroSaldo -= numeroMontoViejo
 
-        // SUMAR EL MONTO DE LA OPERACION ACTUALIZADA
+        // SUMAR AL SALDO EL MONTO DE LA OPERACION ACTUALIZADA
         numeroSaldo += numeroMonto
         
     // SI LA OPERACION ES UN EGRESO
     } else{
 
-        // SUMAR EL MONTO DE LA OPERACION ANTES DE SER ACTULIZADA
+        // SUMAR AL SALDO EL MONTO DE LA OPERACION ANTES DE SER ACTULIZADA
         numeroSaldo += numeroMontoViejo
 
-        // RESTAR EL MONTO DE LA OPERACION ACTUALIZADA
+        // RESTAR AL SALDO EL MONTO DE LA OPERACION ACTUALIZADA
         numeroSaldo -= numeroMonto
     }
     // ACTUALIZA EL SALDO EN BASE A LA OPERACION MODIFICADA
@@ -219,7 +221,7 @@ router.post('/edit/:id', async (req, res) => {
     //FEEDBACK
     req.flash('success', 'Operación modificada con éxito.');
 
-    //REDIRECCIONA A LA LISTA DE OPERACIONES
+    //REDIRECCIONA A LA LISTA DE OPERACIONES (home)
     res.redirect('/moves');
 });
 

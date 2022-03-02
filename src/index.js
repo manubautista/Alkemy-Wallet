@@ -4,8 +4,7 @@ const {engine} = require('express-handlebars');
 const path = require('path');
 //const { helpers } = require('handlebars');
 const session = require('express-session');
-//const validator = require('express-validator');
-const passport = require('passport');
+
 const flash = require('connect-flash');
 const MySQLStore = require('express-mysql-session')(session);
 const bodyParser = require('body-parser');
@@ -38,8 +37,7 @@ app.use(flash());
 app.use(morgan('dev'));
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
-app.use(passport.initialize());
-app.use(passport.session());
+
 
 // Global Variables
 app.use((req, res, next)=>{

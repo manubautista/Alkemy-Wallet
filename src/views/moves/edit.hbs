@@ -4,6 +4,9 @@
             <div class="card">
                 <div class="card-body">
                     <form action="/moves/edit/{{move.ID}}" method="POST">
+                        <div class="text-center"> 
+                            Modificar Operación 
+                        </div>
                         <div class="form-group">
                             <input type="text" value="{{move.concepto}}" class="form-control my-2" name="concepto" placeholder="Concepto" autofocus>
                         </div>
@@ -19,7 +22,7 @@
 
                         <div class="form-group">
                             <button class="btn btn-primary border-light w-100 my-2">
-                                Modificar Operación
+                                Modificar
                             </button>
                         </div>
                     </form>
