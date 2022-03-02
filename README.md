@@ -17,10 +17,10 @@ Base de datos volcada en database/data-dump.sql. </h2>
 ![main](https://user-images.githubusercontent.com/91494874/155935157-7cdbca72-d240-457c-a9cb-f271430e7e4e.jpg)
 
 
-<h2> Vista /moves/add </h2>
+<h2> Vista de formulario para registrar de operaciones /moves/add </h2>
 
 ![form](https://user-images.githubusercontent.com/91494874/156025335-bc22da10-8e5b-48b4-866c-92a221765b19.jpg)
 
-<h2> Vista /moves/edit/95 <- (id de la operación) </h2>
+<h2> Vista de formulario de edición de operaciones /moves/edit/95 <- (id de la operación) </h2>
 
 ![formedit](https://user-images.githubusercontent.com/91494874/156026624-073a1fc9-5acb-44dc-ac17-d3c1958f7ca3.jpg)
