@@ -12,6 +12,12 @@ Base de datos volcada en database/data-dump.sql. </h2>
   <li> Frontend desarrollado con Bootstrap y Fontawesome. </li>
   <li> Se lleva la información de la base de datos a las templates con Handlebars. </li>
  </div>
+ 
+<h2> Estructura de la tabla que contiene las operaciones de dinero. </h2>
+![db](https://user-images.githubusercontent.com/91494874/159546789-8e1df252-9360-4fa8-b9fa-f337b1c9ed8b.png)
+
+
+
 <h2> Vista /moves (home) </h2>
 
 ![main](https://user-images.githubusercontent.com/91494874/155935157-7cdbca72-d240-457c-a9cb-f271430e7e4e.jpg)
