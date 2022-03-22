@@ -14,7 +14,8 @@ Base de datos volcada en database/data-dump.sql. </h2>
  </div>
  
 <h2> Estructura de la tabla que contiene las operaciones de dinero. </h2>
-![db](https://user-images.githubusercontent.com/91494874/159546789-8e1df252-9360-4fa8-b9fa-f337b1c9ed8b.png)
+
+![db](https://user-images.githubusercontent.com/91494874/159546987-577b0f8a-8941-4bab-80ce-53272f5cd9c8.jpg)
 
 
 
