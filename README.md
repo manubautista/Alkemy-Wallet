@@ -9,8 +9,10 @@ Base de datos volcada en database/data-dump.sql. </h2>
   <li> Base de datos manejada con MariaDB. </li>
   <li> El LocalHost fue establecido con Xampp Control panel, utilizando MySQL. </li>
   <li> En el archivo database/data-dump.sql se encuentra el dump de la base de datos.</li>
-  <li> Frontend desarrollado con Bootstrap y Fontawesome. </li>
-  <li> Se lleva la información de la base de datos a las templates con Handlebars. </li>
+  <li> Frontend desarrollado con Bootstrap y Fontawesome, debido a que React.js es optativo. </li>
+  <li> Se lleva la información de la base de datos que viaja mediante JSON hacia las templates (cliente) con Handlebars. No se utilizaron peticiones AJAX. </li>
+  <li> Referido a los commits declarativos y atomizados, se utilizó Github Desktop para realizar los cambios en el proyecto </li>
+  <li> Respecto a las buenas prácticas para rutas, se definió la acción específica que se ejecuta en cada una por ejemplo add.hbs para agregar una nueva operación </li> 
  </div>
  
 <h2> Estructura de la tabla que contiene las operaciones de dinero. </h2>
