@@ -1,6 +1,6 @@
 # Alkemy Wallet
 <h2> Importante: <br> El "home" se encuentra en la ruta ( /moves ) <br>
-Ejemplo en Local Host 400: localhost:4000/moves.  <br>
+Ejemplo en Local Host 4000: localhost:4000/moves.  <br>
 Base de datos volcada en database/data-dump.sql. </h2>
 
 <div> <h3> API para administración de presupuesto personal </h3> 
@@ -12,6 +12,13 @@ Base de datos volcada en database/data-dump.sql. </h2>
   <li> Frontend desarrollado con Bootstrap y Fontawesome. </li>
   <li> Se lleva la información de la base de datos a las templates con Handlebars. </li>
  </div>
+ 
+<h2> Estructura de la tabla que contiene las operaciones de dinero. </h2>
+
+![db](https://user-images.githubusercontent.com/91494874/159546987-577b0f8a-8941-4bab-80ce-53272f5cd9c8.jpg)
+
+
+
 <h2> Vista /moves (home) </h2>
 
 ![main](https://user-images.githubusercontent.com/91494874/155935157-7cdbca72-d240-457c-a9cb-f271430e7e4e.jpg)
